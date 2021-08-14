@@ -17,6 +17,10 @@
 		CFE20C8826C77C4200F69EF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE20C8626C77C4200F69EF5 /* LaunchScreen.storyboard */; };
 		CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C9F26C782CE00F69EF5 /* BaseAPI.swift */; };
 		CFE20CA226C782CF00F69EF5 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CA026C782CF00F69EF5 /* TargetType.swift */; };
+		CFE20CA826C783AC00F69EF5 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CA626C783AC00F69EF5 /* NewsAPI.swift */; };
+		CFE20CA926C783AC00F69EF5 /* NewsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CA726C783AC00F69EF5 /* NewsNetworking.swift */; };
+		CFE20CAE26C7844B00F69EF5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CAD26C7844B00F69EF5 /* Constant.swift */; };
+		CFE20CB226C7881F00F69EF5 /* NewsEverything.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CB126C7881F00F69EF5 /* NewsEverything.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		CFE20C8926C77C4200F69EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE20C9F26C782CE00F69EF5 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		CFE20CA026C782CF00F69EF5 /* TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		CFE20CA626C783AC00F69EF5 /* NewsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		CFE20CA726C783AC00F69EF5 /* NewsNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsNetworking.swift; sourceTree = "<group>"; };
+		CFE20CAD26C7844B00F69EF5 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CFE20CB126C7881F00F69EF5 /* NewsEverything.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEverything.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,10 @@
 		CFE20C7726C77C3E00F69EF5 /* Newsly */ = {
 			isa = PBXGroup;
 			children = (
+				CFE20CB026C7880400F69EF5 /* Models */,
+				CFE20CAD26C7844B00F69EF5 /* Constant.swift */,
 				CFE20C9D26C7824D00F69EF5 /* Networking */,
-				CFE20C9C26C7823400F69EF5 /* Configuration */,
+				CFE20C9C26C7823400F69EF5 /* Application */,
 				CFE20C7C26C77C3E00F69EF5 /* ViewController.swift */,
 				CFE20C7E26C77C3E00F69EF5 /* Main.storyboard */,
 				CFE20C8426C77C4200F69EF5 /* Assets.xcassets */,
@@ -90,18 +100,19 @@
 			path = Newsly;
 			sourceTree = "<group>";
 		};
-		CFE20C9C26C7823400F69EF5 /* Configuration */ = {
+		CFE20C9C26C7823400F69EF5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				CFE20C7826C77C3E00F69EF5 /* AppDelegate.swift */,
 				CFE20C7A26C77C3E00F69EF5 /* SceneDelegate.swift */,
 			);
-			path = Configuration;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		CFE20C9D26C7824D00F69EF5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CFE20CA526C7837B00F69EF5 /* NewsSevice */,
 				CFE20C9E26C7827400F69EF5 /* Base */,
 			);
 			name = Networking;
@@ -115,6 +126,23 @@
 				CFE20CA026C782CF00F69EF5 /* TargetType.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		CFE20CA526C7837B00F69EF5 /* NewsSevice */ = {
+			isa = PBXGroup;
+			children = (
+				CFE20CA626C783AC00F69EF5 /* NewsAPI.swift */,
+				CFE20CA726C783AC00F69EF5 /* NewsNetworking.swift */,
+			);
+			name = NewsSevice;
+			sourceTree = "<group>";
+		};
+		CFE20CB026C7880400F69EF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFE20CB126C7881F00F69EF5 /* NewsEverything.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F0ABCFCEBB22326E840F0012 /* Frameworks */ = {
@@ -241,10 +269,14 @@
 			files = (
 				CFE20CA226C782CF00F69EF5 /* TargetType.swift in Sources */,
 				CFE20C7D26C77C3E00F69EF5 /* ViewController.swift in Sources */,
+				CFE20CAE26C7844B00F69EF5 /* Constant.swift in Sources */,
+				CFE20CB226C7881F00F69EF5 /* NewsEverything.swift in Sources */,
+				CFE20CA926C783AC00F69EF5 /* NewsNetworking.swift in Sources */,
 				CFE20C8326C77C3E00F69EF5 /* Newsly.xcdatamodeld in Sources */,
 				CFE20C7926C77C3E00F69EF5 /* AppDelegate.swift in Sources */,
 				CFE20C7B26C77C3E00F69EF5 /* SceneDelegate.swift in Sources */,
 				CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */,
+				CFE20CA826C783AC00F69EF5 /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
