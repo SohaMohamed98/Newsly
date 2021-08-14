@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		CFE20C8326C77C3E00F69EF5 /* Newsly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C8126C77C3E00F69EF5 /* Newsly.xcdatamodeld */; };
 		CFE20C8526C77C4200F69EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE20C8426C77C4200F69EF5 /* Assets.xcassets */; };
 		CFE20C8826C77C4200F69EF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE20C8626C77C4200F69EF5 /* LaunchScreen.storyboard */; };
+		CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C9F26C782CE00F69EF5 /* BaseAPI.swift */; };
+		CFE20CA226C782CF00F69EF5 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20CA026C782CF00F69EF5 /* TargetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CFE20C8426C77C4200F69EF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE20C8726C77C4200F69EF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE20C8926C77C4200F69EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE20C9F26C782CE00F69EF5 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		CFE20CA026C782CF00F69EF5 /* TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +54,6 @@
 				4C28C8FEFE2F56A2B982C9CE /* Pods-Newsly.debug.xcconfig */,
 				862AB83DB4D59199E94494E0 /* Pods-Newsly.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,8 +78,8 @@
 		CFE20C7726C77C3E00F69EF5 /* Newsly */ = {
 			isa = PBXGroup;
 			children = (
-				CFE20C7826C77C3E00F69EF5 /* AppDelegate.swift */,
-				CFE20C7A26C77C3E00F69EF5 /* SceneDelegate.swift */,
+				CFE20C9D26C7824D00F69EF5 /* Networking */,
+				CFE20C9C26C7823400F69EF5 /* Configuration */,
 				CFE20C7C26C77C3E00F69EF5 /* ViewController.swift */,
 				CFE20C7E26C77C3E00F69EF5 /* Main.storyboard */,
 				CFE20C8426C77C4200F69EF5 /* Assets.xcassets */,
@@ -85,6 +88,33 @@
 				CFE20C8126C77C3E00F69EF5 /* Newsly.xcdatamodeld */,
 			);
 			path = Newsly;
+			sourceTree = "<group>";
+		};
+		CFE20C9C26C7823400F69EF5 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CFE20C7826C77C3E00F69EF5 /* AppDelegate.swift */,
+				CFE20C7A26C77C3E00F69EF5 /* SceneDelegate.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CFE20C9D26C7824D00F69EF5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CFE20C9E26C7827400F69EF5 /* Base */,
+			);
+			name = Networking;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		CFE20C9E26C7827400F69EF5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CFE20C9F26C782CE00F69EF5 /* BaseAPI.swift */,
+				CFE20CA026C782CF00F69EF5 /* TargetType.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		F0ABCFCEBB22326E840F0012 /* Frameworks */ = {
@@ -209,10 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE20CA226C782CF00F69EF5 /* TargetType.swift in Sources */,
 				CFE20C7D26C77C3E00F69EF5 /* ViewController.swift in Sources */,
 				CFE20C8326C77C3E00F69EF5 /* Newsly.xcdatamodeld in Sources */,
 				CFE20C7926C77C3E00F69EF5 /* AppDelegate.swift in Sources */,
 				CFE20C7B26C77C3E00F69EF5 /* SceneDelegate.swift in Sources */,
+				CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
