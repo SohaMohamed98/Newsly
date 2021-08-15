@@ -8,12 +8,12 @@
 import Foundation
 
 protocol NewsAPIProtocol {
-    func getNewsEverything(completion:@escaping (Result<NewsEverything, NSError>) -> Void)
+    func getNewsEverything(completion:@escaping (Result<NewsEverything?, NSError>) -> Void)
 }
 
 class NewsAPI:BaseAPI<NewsNetworking>, NewsAPIProtocol{
     
-    func getNewsEverything(completion:@escaping (Result<NewsEverything, NSError>) -> Void){
+    func getNewsEverything(completion:@escaping (Result<NewsEverything?, NSError>) -> Void){
         self.fetchData(target: .getNewsEverything, responseClass: NewsEverything.self) { (result) in
             completion(result)
         }

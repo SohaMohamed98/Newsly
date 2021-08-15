@@ -9,8 +9,6 @@ import Foundation
 struct Constatnts {
     
     static var baseURL = "https://newsapi.org/v2/"
-    
-   // static var baseURLPosts = "https://jsonplaceholder.typicode.com/posts"
 }
 
 struct ErrorMessage {

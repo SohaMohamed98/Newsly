@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 class BaseAPI<T:TargetType>{
-    func fetchData<M: Codable>(target:T, responseClass: M.Type, completion: @escaping (Result<M,NSError>) -> Void){
-        var method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
-        var headers = Alamofire.HTTPHeaders(target.headers ?? [:])
-        var parameters = buildParams(task: target.task)
+    func fetchData<M: Codable>(target:T, responseClass: M.Type, completion: @escaping (Result<M?,NSError>) -> Void){
+        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
+        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
+        let parameters = buildParams(task: target.task)
         AF.request(target.baseURL + target.path, method: method, parameters: parameters.0, encoding: parameters.1, headers: headers).responseJSON { (response) in
             
             guard let statusCode = response.response?.statusCode else{ return}
@@ -23,7 +23,7 @@ class BaseAPI<T:TargetType>{
                 completion(.success(objData))
                 
             }else{
-                var error = NSError(domain: target.baseURL, code: statusCode, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.genericMessage])
+                let error = NSError(domain: target.baseURL, code: statusCode, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.genericMessage])
                 completion(.failure(error))
             }
         }

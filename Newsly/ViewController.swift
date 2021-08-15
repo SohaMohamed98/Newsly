@@ -6,23 +6,43 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
+    
+    var disposeBag = DisposeBag()
+    var obj : newsViewModel = newsViewModel()
+    
+    @IBOutlet weak var newsCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("hello")
-        var newsApi :NewsAPIProtocol = NewsAPI()
-        newsApi.getNewsEverything { (result) in
-            switch result{
-            case .success(let news):
-                print(news.articles?.count)
-               // print(news.articles)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        registerCells()
+        obj.getNewsTechnology()
+        newsCollectionView.delegate = self
+        obj.newsObservable?.asObservable().bind(to: newsCollectionView.rx.items(cellIdentifier: "NewsCollectionViewCell")){row, items, cell in
+            (cell as? NewsCollectionViewCell)?.article = items            
+        }.disposed(by: disposeBag)
+    }
+    
+    
+    func registerCells() {
+        let newsCell = UINib(nibName: "NewsCollectionViewCell", bundle: nil)
+        newsCollectionView.register(newsCell, forCellWithReuseIdentifier: "NewsCollectionViewCell")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.safeAreaLayoutGuide.layoutFrame.width - 40, height: 153)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 13, left: 8, bottom: 0, right: 8)
+            
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(8)
     }
 
 
