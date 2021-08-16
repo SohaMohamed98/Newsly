@@ -38,11 +38,9 @@ extension NewsNetworking:TargetType{
     var task: Task {
         switch self {
         case .getNewsEverything:
-            return .requestParams(parameters: ["q": "technology", "pageSize": 20,"apiKey": "a2a9830ba6e74efdb602bf203fbf2863"], encoding: URLEncoding.default)
-          
+            return .requestParams(parameters: ["q": "technology", "pageSize": 20, "from": "2021-07-20", "to": "2021-08-15", "sortBy": "publishedAt", "apiKey": "a2a9830ba6e74efdb602bf203fbf2863"], encoding: URLEncoding.default)
         }
     }
-    
     var headers: [String : String]? {
         switch self {
         default:

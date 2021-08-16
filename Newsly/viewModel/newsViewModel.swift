@@ -29,6 +29,7 @@ class newsViewModel{
                 guard let new = news else {return}
                 self?.newsSubject?.asObserver().onNext(new.articles)
                 self?.getData(header: new.articles[0].publishedAt ?? "", articles: new.articles)
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }

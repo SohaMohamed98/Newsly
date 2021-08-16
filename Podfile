@@ -9,9 +9,6 @@ target 'Newsly' do
   pod 'Alamofire'
   pod 'RxDataSources'
   pod 'SDWebImage', '~> 5.0'
-  pod 'ViewAnimator', '2.7.0'
-  pod 'MOLH'
   pod 'MarqueeLabel'
-  pod 'JGProgressHUD'
 
 end
