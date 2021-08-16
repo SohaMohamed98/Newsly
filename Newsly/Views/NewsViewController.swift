@@ -9,24 +9,45 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
-class NewsViewController: UIViewController{
 
-   
+struct MySection {
+    var header: String
+    var items: [Article]
+}
+
+extension MySection: SectionModelType {
+  typealias Item = Article
+
+   init(original: MySection, items: [Item]) {
+    self = original
+    self.items = items
+  }
+}
+class NewsViewController: UIViewController{
     @IBOutlet weak var newsTableView: UITableView!
     var disposeBag = DisposeBag()
     var obj : newsViewModel = newsViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
-        // Do any additional setup after loading the view.
         obj.getNewsTechnology()
         newsTableView.delegate = self
-        
-        obj.newsObservable?.asObservable().bind(to: newsTableView.rx.items(cellIdentifier: Constatnts.newsCellIdentifier)){row, items, cell in
-            (cell as! NewsTableViewCell).article = items
-        }.disposed(by: disposeBag)
+       reloadData()
     }
     
+    func reloadData(){
+        let dataSource = RxTableViewSectionedReloadDataSource<MySection>(
+          configureCell: { dataSource, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constatnts.newsCellIdentifier, for: indexPath)
+            (cell as! NewsTableViewCell).article = item
+            return cell
+        }, titleForHeaderInSection: { ds, index in
+            return ds.sectionModels[index].header
+        })
+        
+        obj.newsSectionObservable?.asObservable().bind(to: newsTableView.rx.items(dataSource: dataSource))
+          .disposed(by: disposeBag)
+    }
 
     func registerCells() {
         let newsCell = UINib(nibName: Constatnts.newsCellIdentifier, bundle: nil)
