@@ -9,6 +9,10 @@ import Foundation
 struct Constatnts {
     
     static var baseURL = "https://newsapi.org/v2/"
+    
+    static var newsCellIdentifier = "NewsTableViewCell"
+    static var fontName = "Helvetica Neue"
+    
 }
 
 struct ErrorMessage {

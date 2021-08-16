@@ -7,8 +7,7 @@ target 'Newsly' do
 
   # Pods for Newsly
   pod 'Alamofire'
-  pod 'RxSwift', '6.1.0'
-  pod 'RxCocoa', '6.1.0'
+  pod 'RxDataSources'
   pod 'SDWebImage', '~> 5.0'
   pod 'ViewAnimator', '2.7.0'
   pod 'MOLH'

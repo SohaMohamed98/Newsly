@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		80C2488D089BC8D7E814915C /* Pods_Newsly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A0124719983B73E54BF5E /* Pods_Newsly.framework */; };
+		CFA7265E26CA9E1100CE69D3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7265C26CA9E1100CE69D3 /* NewsTableViewCell.swift */; };
+		CFA7265F26CA9E1100CE69D3 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7265D26CA9E1100CE69D3 /* NewsTableViewCell.xib */; };
+		CFA7266226CAA18300CE69D3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7266126CAA18300CE69D3 /* NewsViewController.swift */; };
 		CFE20C7926C77C3E00F69EF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C7826C77C3E00F69EF5 /* AppDelegate.swift */; };
 		CFE20C7B26C77C3E00F69EF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C7A26C77C3E00F69EF5 /* SceneDelegate.swift */; };
 		CFE20C7D26C77C3E00F69EF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE20C7C26C77C3E00F69EF5 /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 		023A0124719983B73E54BF5E /* Pods_Newsly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Newsly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C28C8FEFE2F56A2B982C9CE /* Pods-Newsly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsly.debug.xcconfig"; path = "Target Support Files/Pods-Newsly/Pods-Newsly.debug.xcconfig"; sourceTree = "<group>"; };
 		862AB83DB4D59199E94494E0 /* Pods-Newsly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsly.release.xcconfig"; path = "Target Support Files/Pods-Newsly/Pods-Newsly.release.xcconfig"; sourceTree = "<group>"; };
+		CFA7265C26CA9E1100CE69D3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		CFA7265D26CA9E1100CE69D3 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		CFA7266126CAA18300CE69D3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		CFE20C7526C77C3E00F69EF5 /* Newsly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newsly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE20C7826C77C3E00F69EF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE20C7A26C77C3E00F69EF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,15 @@
 				862AB83DB4D59199E94494E0 /* Pods-Newsly.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CFA7265626CA9DC100CE69D3 /* newsCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7265C26CA9E1100CE69D3 /* NewsTableViewCell.swift */,
+				CFA7265D26CA9E1100CE69D3 /* NewsTableViewCell.xib */,
+			);
+			path = newsCell;
 			sourceTree = "<group>";
 		};
 		CFE20C6C26C77C3E00F69EF5 = {
@@ -156,7 +171,9 @@
 		CFE20CB826C88BC900F69EF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFA7265626CA9DC100CE69D3 /* newsCell */,
 				CFE20CB926C88BE100F69EF5 /* cell */,
+				CFA7266126CAA18300CE69D3 /* NewsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +266,7 @@
 				CFE20C8526C77C4200F69EF5 /* Assets.xcassets in Resources */,
 				CFE20C8026C77C3E00F69EF5 /* Main.storyboard in Resources */,
 				CFE20CBE26C88C2400F69EF5 /* NewsCollectionViewCell.xib in Resources */,
+				CFA7265F26CA9E1100CE69D3 /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,12 +323,14 @@
 				CFE20C7D26C77C3E00F69EF5 /* ViewController.swift in Sources */,
 				CFE20CAE26C7844B00F69EF5 /* Constant.swift in Sources */,
 				CFE20CBD26C88C2400F69EF5 /* NewsCollectionViewCell.swift in Sources */,
+				CFA7265E26CA9E1100CE69D3 /* NewsTableViewCell.swift in Sources */,
 				CFE20CB226C7881F00F69EF5 /* NewsEverything.swift in Sources */,
 				CFE20CA926C783AC00F69EF5 /* NewsNetworking.swift in Sources */,
 				CFE20C8326C77C3E00F69EF5 /* Newsly.xcdatamodeld in Sources */,
 				CFE20C7926C77C3E00F69EF5 /* AppDelegate.swift in Sources */,
 				CFE20C7B26C77C3E00F69EF5 /* SceneDelegate.swift in Sources */,
 				CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */,
+				CFA7266226CAA18300CE69D3 /* NewsViewController.swift in Sources */,
 				CFE20CA826C783AC00F69EF5 /* NewsAPI.swift in Sources */,
 				CFE20CC226C8A6DD00F69EF5 /* newsViewModel.swift in Sources */,
 			);
