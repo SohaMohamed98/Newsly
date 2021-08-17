@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 class newsViewModel{
-    var newsApi :NewsAPIProtocol?
+    private var newsApi :NewsAPIProtocol?
     var newsObservable: Observable<[Article]>?
     private var newsSubject: PublishSubject<[Article]>?
     var newsSectionObservable: Observable<[MySection]>?
@@ -39,6 +39,5 @@ class newsViewModel{
     
     func getData(header:String, articles: [Article]){
         newsSectionSubject?.onNext([MySection(header: header, items: articles)])
-        
     }
 }

@@ -9,14 +9,12 @@ import UIKit
 import SDWebImage
 class DetailsViewController: UIViewController {
  
-    @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsTitle: UILabel!
-   
-    @IBOutlet weak var newsDescription: UILabel!
-    
-    @IBOutlet weak var newsContent: UILabel!
-    @IBOutlet weak var newsAuthor: UILabel!
-    @IBOutlet weak var newsPubished: UILabel!
+    @IBOutlet weak private var newsImage: UIImageView!
+    @IBOutlet weak private var newsTitle: UILabel!
+    @IBOutlet weak private var newsDescription: UILabel!
+    @IBOutlet weak private var newsContent: UILabel!
+    @IBOutlet weak private var newsAuthor: UILabel!
+    @IBOutlet weak private var newsPubished: UILabel!
     var article: Article?
     override func viewDidLoad() {
         super.viewDidLoad()

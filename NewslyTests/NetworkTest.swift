@@ -5,6 +5,8 @@
 //  Created by SOHA on 8/16/21.
 //
 import XCTest
+import RxCocoa
+import RxSwift
 @testable import Newsly
 class NetworkTest: XCTestCase {
 

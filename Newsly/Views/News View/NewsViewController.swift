@@ -33,11 +33,7 @@ class NewsViewController: UIViewController{
         obj.getNewsTechnology()
         newsTableView.delegate = self
         loadData()
-        newsTableView.rx.modelSelected(Article.self).subscribe{ (item) in
-            var detailsViewControler = self.storyboard?.instantiateViewController(withIdentifier: Constatnts.detailsIdentifier) as! DetailsViewController
-            detailsViewControler.article = item.element
-            self.navigationController?.pushViewController(detailsViewControler, animated: true)
-        }.disposed(by: disposeBag)
+        selectRow()
     }
     
     func loadData(){
@@ -53,6 +49,14 @@ class NewsViewController: UIViewController{
         obj.newsSectionObservable?.asObservable().bind(to: newsTableView.rx.items(dataSource: dataSource))
           .disposed(by: disposeBag)
     }
+    
+    func selectRow(){
+        newsTableView.rx.modelSelected(Article.self).subscribe{ [weak self] (item) in
+            var detailsViewControler = self?.storyboard?.instantiateViewController(withIdentifier: Constatnts.detailsIdentifier) as! DetailsViewController
+            detailsViewControler.article = item.element
+            self?.navigationController?.pushViewController(detailsViewControler, animated: true)
+        }.disposed(by: disposeBag)
+    }
 
     func registerCells() {
         let newsCell = UINib(nibName: Constatnts.newsCellIdentifier, bundle: nil)
@@ -60,21 +64,3 @@ class NewsViewController: UIViewController{
     }
 }
 
-extension NewsViewController:  UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(40)
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(153)
-    }
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        (view as! UITableViewHeaderFooterView).contentView.layer.cornerRadius = 15
-        (view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor.white
-        (view as! UITableViewHeaderFooterView).textLabel?.font = UIFont(name: Constatnts.fontName, size: 14)
-        (view as! UITableViewHeaderFooterView).textLabel?.textAlignment = .center
-        
-        
-    }
-    
-}

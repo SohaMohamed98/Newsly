@@ -13,4 +13,10 @@ target 'Newsly' do
   pod 'SDWebImage', '~> 5.0'
   pod 'MarqueeLabel'
 
+  target 'NewslyTests' do
+      inherit! :search_paths
+      # Pods for testing
+    end
+
+
 end
