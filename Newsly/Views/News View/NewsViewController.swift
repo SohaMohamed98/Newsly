@@ -24,7 +24,7 @@ extension MySection: SectionModelType {
   }
 }
 class NewsViewController: UIViewController{
-    @IBOutlet weak var newsTableView: UITableView!
+    @IBOutlet weak private var newsTableView: UITableView!
     var disposeBag = DisposeBag()
     var obj : newsViewModel = newsViewModel()
     override func viewDidLoad() {
@@ -32,10 +32,15 @@ class NewsViewController: UIViewController{
         registerCells()
         obj.getNewsTechnology()
         newsTableView.delegate = self
-       reloadData()
+        loadData()
+        newsTableView.rx.modelSelected(Article.self).subscribe{ (item) in
+            var detailsViewControler = self.storyboard?.instantiateViewController(withIdentifier: Constatnts.detailsIdentifier) as! DetailsViewController
+            detailsViewControler.article = item.element
+            self.navigationController?.pushViewController(detailsViewControler, animated: true)
+        }.disposed(by: disposeBag)
     }
     
-    func reloadData(){
+    func loadData(){
         let dataSource = RxTableViewSectionedReloadDataSource<MySection>(
           configureCell: { dataSource, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: Constatnts.newsCellIdentifier, for: indexPath)

@@ -28,7 +28,8 @@ class newsViewModel{
             case .success(let news):
                 guard let new = news else {return}
                 self?.newsSubject?.asObserver().onNext(new.articles)
-                self?.getData(header: new.articles[0].publishedAt ?? "", articles: new.articles)
+                guard let date = new.articles[0].publishedAt else {return}
+                self?.getData(header: date, articles: new.articles)
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -38,5 +39,6 @@ class newsViewModel{
     
     func getData(header:String, articles: [Article]){
         newsSectionSubject?.onNext([MySection(header: header, items: articles)])
+        
     }
 }

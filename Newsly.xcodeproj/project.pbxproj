@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		80C2488D089BC8D7E814915C /* Pods_Newsly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A0124719983B73E54BF5E /* Pods_Newsly.framework */; };
+		CF7204DD26CB370F005F2ED7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7204DC26CB370F005F2ED7 /* DetailsViewController.swift */; };
+		CF7204E126CB426A005F2ED7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7204E026CB426A005F2ED7 /* WebViewController.swift */; };
+		CF7204E526CB4873005F2ED7 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7204E426CB4873005F2ED7 /* NetworkTest.swift */; };
 		CFA7265E26CA9E1100CE69D3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7265C26CA9E1100CE69D3 /* NewsTableViewCell.swift */; };
 		CFA7265F26CA9E1100CE69D3 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7265D26CA9E1100CE69D3 /* NewsTableViewCell.xib */; };
 		CFA7266226CAA18300CE69D3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7266126CAA18300CE69D3 /* NewsViewController.swift */; };
@@ -41,6 +44,9 @@
 		023A0124719983B73E54BF5E /* Pods_Newsly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Newsly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C28C8FEFE2F56A2B982C9CE /* Pods-Newsly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsly.debug.xcconfig"; path = "Target Support Files/Pods-Newsly/Pods-Newsly.debug.xcconfig"; sourceTree = "<group>"; };
 		862AB83DB4D59199E94494E0 /* Pods-Newsly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsly.release.xcconfig"; path = "Target Support Files/Pods-Newsly/Pods-Newsly.release.xcconfig"; sourceTree = "<group>"; };
+		CF7204DC26CB370F005F2ED7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		CF7204E026CB426A005F2ED7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CF7204E426CB4873005F2ED7 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		CFA7265C26CA9E1100CE69D3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		CFA7265D26CA9E1100CE69D3 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		CFA7266126CAA18300CE69D3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CF824AFF26CB187F00210F04 /* News View */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7265626CA9DC100CE69D3 /* newsCell */,
+				CFA7266126CAA18300CE69D3 /* NewsViewController.swift */,
+			);
+			path = "News View";
+			sourceTree = "<group>";
+		};
 		CFA7265626CA9DC100CE69D3 /* newsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +119,7 @@
 		CFA7266F26CAC63800CE69D3 /* NewslyTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF7204E426CB4873005F2ED7 /* NetworkTest.swift */,
 				CFA7267026CAC63800CE69D3 /* NewslyTests.swift */,
 				CFA7267226CAC63800CE69D3 /* Info.plist */,
 			);
@@ -194,10 +210,11 @@
 		CFE20CB826C88BC900F69EF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF824AFF26CB187F00210F04 /* News View */,
 				CFE20C8626C77C4200F69EF5 /* LaunchScreen.storyboard */,
 				CFE20C7E26C77C3E00F69EF5 /* Main.storyboard */,
-				CFA7265626CA9DC100CE69D3 /* newsCell */,
-				CFA7266126CAA18300CE69D3 /* NewsViewController.swift */,
+				CF7204DC26CB370F005F2ED7 /* DetailsViewController.swift */,
+				CF7204E026CB426A005F2ED7 /* WebViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7204E526CB4873005F2ED7 /* NetworkTest.swift in Sources */,
 				CFA7267126CAC63800CE69D3 /* NewslyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +400,8 @@
 				CFE20CA126C782CF00F69EF5 /* BaseAPI.swift in Sources */,
 				CFA7266226CAA18300CE69D3 /* NewsViewController.swift in Sources */,
 				CFE20CA826C783AC00F69EF5 /* NewsAPI.swift in Sources */,
+				CF7204E126CB426A005F2ED7 /* WebViewController.swift in Sources */,
+				CF7204DD26CB370F005F2ED7 /* DetailsViewController.swift in Sources */,
 				CFE20CC226C8A6DD00F69EF5 /* newsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

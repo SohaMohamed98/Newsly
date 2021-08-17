@@ -8,6 +8,8 @@ target 'Newsly' do
   # Pods for Newsly
   pod 'Alamofire'
   pod 'RxDataSources'
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'MarqueeLabel'
 

@@ -12,7 +12,8 @@ struct Constatnts {
     
     static var newsCellIdentifier = "NewsTableViewCell"
     static var fontName = "Helvetica Neue"
-    
+    static var detailsIdentifier = "DetailsViewController"
+    static var webIdentifier = "WebViewController"
 }
 
 struct ErrorMessage {
